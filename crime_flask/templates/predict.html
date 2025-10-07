@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offence Tracker - Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        Offence Tracker - A Crime Classification
+        <div class="navbar-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('predict') }}" class="active">Predict</a>
+        </div>
+    </div>
+
+    <!-- Prediction Container -->
+    <div class="container">
+
+        <!-- Finger Image -->
+        <img src="{{ url_for('static', filename='images/finger.jpg') }}" 
+             alt="Upload Icon" 
+             style="display:block; margin:20px auto; max-width:150px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+        <!-- Form wrapping the file input and button -->
+        <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <div class="drop-zone">
+                <p>Drag & Drop an image here OR choose below</p>
+                <input type="file" id="file" name="file" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="upload-btn">Predict</button>
+        </form>
+
+        <!-- Preview Image -->
+        <img class="preview-img" src="" alt="Preview" 
+             style="display:none; margin-top:20px; max-width:300px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+        <!-- Prediction Result -->
+        {% if prediction %}
+            <div class="result">
+                Prediction: {{ prediction }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
