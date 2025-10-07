@@ -1,0 +1,146 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f5fdf7;
+    color: #1c2833;
+    line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background: #064420;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    background: #5d6d7e;
+}
+
+/* ===== Home Page Content ===== */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 50px;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content h1 {
+    font-size: 34px;
+    color: #064420;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.content img {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== Predict Page ===== */
+.container {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.container img {
+    width: 280px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 15px;
+    color: #064420;
+}
+
+input[type="file"] {
+    margin: 15px 0;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    width: 280px;
+    transition: border 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #064420;
+}
+
+.upload-btn {
+    background: #e67e22;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+    background: #ca6f1e;
+    transform: translateY(-2px);
+}
+
+.result {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #064420;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .content img {
+        width: 90%;
+    }
+}
