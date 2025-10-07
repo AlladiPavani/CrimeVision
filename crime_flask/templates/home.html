@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offence Tracker - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        Offence Tracker - A Crime Classification
+        <div class="navbar-links">
+            <a href="{{ url_for('home') }}" class="active">Home</a>
+            <a href="{{ url_for('predict') }}">Predict</a>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <div class="content-text reveal">
+            <h1>Welcome to Offence Tracker</h1>
+            <p>
+                This system uses advanced deep learning techniques to classify crime-related images 
+                and help in automated offence tracking.  
+            </p>
+            <p>
+                Navigate to the <b>Predict</b> page to upload an image and get instant classification results.
+            </p>
+        </div>
+
+        <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="Crime Classification" class="reveal">
+
+    </div>
+
+</body>
+</html>
